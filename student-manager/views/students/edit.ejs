@@ -1,0 +1,16 @@
+<%- include('../partials/header') %>
+<h2>Edit Student: <%= student.name %></h2>
+<form method="POST" action="/students/<%= student._id %>?_method=PUT">
+  <input type="text" value="<%= student.studentId %>" disabled />
+  <input type="text" value="<%= student.name %>" disabled />
+  <input type="number" step="0.1" name="gpa" value="<%= student.gpa %>" required />
+  <label>
+    <input type="radio" name="isPG" value="yes" <%= student.isPG ? 'checked' : '' %> /> PG
+  </label>
+  <label>
+    <input type="radio" name="isPG" value="no" <%= !student.isPG ? 'checked' : '' %> /> UG
+  </label>
+  <button type="submit">Update</button>
+</form>
+<a href="/students">Back</a>
+<%- include('../partials/footer') %>

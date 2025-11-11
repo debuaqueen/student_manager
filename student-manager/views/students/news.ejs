@@ -1,0 +1,16 @@
+<%- include('../partials/header') %>
+<h2>Add New Student</h2>
+<form method="POST" action="/students">
+  <input type="number" name="studentId" placeholder="Student ID" required />
+  <input type="text" name="name" placeholder="Full Name" required />
+  <input type="number" step="0.1" name="gpa" placeholder="GPA" required />
+  <label>
+    <input type="radio" name="isPG" value="yes" /> Postgraduate
+  </label>
+  <label>
+    <input type="radio" name="isPG" value="no" checked /> Undergraduate
+  </label>
+  <button type="submit">Add Student</button>
+</form>
+<a href="/students">Back</a>
+<%- include('../partials/footer') %>

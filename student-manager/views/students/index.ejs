@@ -1,0 +1,36 @@
+<%- include('../partials/header') %>
+<h1>All Students</h1>
+
+<!-- Search Form -->
+<form action="/students" method="GET" class="search-form">
+  <input type="text" name="name" placeholder="Search by name" value="<%= search.name || '' %>" />
+  <select name="isPG">
+    <option value="">PG Status</option>
+    <option value="true" <%= search.isPG === 'true' ? 'selected' : '' %>>Yes</option>
+    <option value="false" <%= search.isPG === 'false' ? 'selected' : '' %>>No</option>
+  </select>
+  <input type="number" step="0.1" name="minGPA" placeholder="Min GPA" value="<%= search.minGPA || '' %>" />
+  <button type="submit">Search</button>
+</form>
+
+<ul class="student-list">
+  <% if (students.length === 0) { %>
+    <p>No students found.</p>
+  <% } else { %>
+    <% students.forEach(s => { %>
+      <li class="student-item">
+        <strong><%= s.name %></strong> 
+        (ID: <%= s.studentId %>) 
+        – GPA: <%= s.gpa %> 
+        – <%= s.isPG ? 'Postgraduate' : 'Undergraduate' %>
+        <div class="actions">
+          <a href="/students/<%= s._id %>/edit">Edit</a>
+          <form action="/students/<%= s._id %>?_method=DELETE" method="POST" style="display:inline">
+            <button type="submit" onclick="return confirm('Delete this student?')">Delete</button>
+          </form>
+        </div>
+      </li>
+    <% }) %>
+  <% } %>
+</ul>
+<%- include('../partials/footer') %>

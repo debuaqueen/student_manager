@@ -1,0 +1,15 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', sans-serif; background: #f4f6f9; color: #333; }
+.container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+nav { background: #2c3e50; padding: 15px; margin-bottom: 20px; border-radius: 8px; }
+nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: 500; }
+nav a:hover { text-decoration: underline; }
+h1, h2 { color: #2c3e50; margin-bottom: 20px; }
+form { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-bottom: 20px; }
+input, select, button { padding: 10px; margin: 8px 0; width: 100%; border: 1px solid #ddd; border-radius: 4px; }
+button { background: #3498db; color: white; font-weight: bold; cursor: pointer; }
+button:hover { background: #2980b9; }
+.search-form input, .search-form select { display: inline-block; width: auto; margin-right: 10px; }
+.student-list { list-style: none; }
+.student-item { background: white; padding: 15px; margin: 10px 0; border-radius: 8px; box-shadow: 0 1px 5px rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center; }
+.actions a, .actions button { margin-left: 10px; font-size: 0.9em; }
